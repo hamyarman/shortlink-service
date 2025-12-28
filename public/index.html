@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shortlink Service</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        max-width: 700px;
+        margin: 40px auto;
+        padding: 0 16px;
+      }
+      form {
+        display: flex;
+        gap: 8px;
+        margin-bottom: 16px;
+      }
+      input[type="url"] {
+        flex: 1;
+        padding: 10px;
+        border-radius: 4px;
+        border: 1px solid #ccc;
+      }
+      button {
+        padding: 10px 16px;
+        border: none;
+        background: #1f6feb;
+        color: white;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+      button:disabled {
+        background: #9ec3ff;
+      }
+      .panel {
+        border: 1px solid #eee;
+        padding: 12px;
+        margin-top: 12px;
+        border-radius: 6px;
+        background: #fafafa;
+      }
+      .error {
+        color: #b42318;
+      }
+      .stats-table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+      .stats-table td {
+        padding: 6px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Shortlink Service</h1>
+    <p>Create a short URL and view its stats.</p>
+
+    <form id="shorten-form">
+      <input
+        type="url"
+        id="url-input"
+        placeholder="https://example.com"
+        required
+      />
+      <button type="submit" id="shorten-button">Shorten</button>
+    </form>
+
+    <div id="result" class="panel" hidden></div>
+    <div id="stats" class="panel" hidden></div>
+    <div id="error" class="error"></div>
+
+    <script src="/app.js"></script>
+  </body>
+</html>
